@@ -4,6 +4,15 @@
 #include <stdio.h>
 #include <sys/types.h>
 
+ssize_t _write(int fd, const void *buf, size_t count){
+    char * letter = (char *)(buf);
+    for(int i = 0; i < count; i++){
+    uart_send(*letter);
+    letter++;
+    }
+    return count;
+}
+
 int main() {
     uart_init();
 
@@ -37,6 +46,7 @@ int main() {
                 ledOn = true;
             }
 		}
+
 
 		sleep = 1000000;
 		while(--sleep); // Delay
