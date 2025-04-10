@@ -17,11 +17,9 @@ typedef struct {
 	volatile uint32_t RESERVED5[97];
 	volatile uint32_t INTENSET;
 	volatile uint32_t INTENCLR;
-	volatile uint32_t RESERVED3[129];
+	volatile uint32_t RESERVED6[129];
 	volatile uint32_t CONFIG[8];
 } NRF_GPIOTE_REG;
 
-void button_init() {
-
-}
+void button_and_ledMatrix_init();
 #endif
